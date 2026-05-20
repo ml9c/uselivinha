@@ -980,13 +980,23 @@ const CAT_ICON = {
 };
 const SK = "livinha_despesas_v6";
 const APP_VERSION_KEY = `${SK}_app_version`;
-const APP_VERSION = "2026.05.20.2";
-const APP_UPDATE_MESSAGE = "Atualização aplicada: logo removido, tela de login obrigatória e acesso aos dados somente após autenticação.";
+const APP_VERSION = "2026.05.20.3";
+const APP_UPDATE_MESSAGE = "Atualização aplicada: login ajustado para retornar ao endereço atual do app, inclusive no GitHub Pages.";
 const SEED_VERSION_KEY = `${SK}_seed_version`;
 const SEED_VERSION = "2026-07-print-v1";
 const SUPABASE_URL = "https://bybobnokmfkuerqgzmtk.supabase.co";
 const SUPABASE_KEY = "sb_publishable_doSkbX5MAGsHmcE11JTY6A_iqbnPJnM";
-const AUTH_REDIRECT_URL = window.location.protocol === "file:" ? "http://127.0.0.1:4173/" : `${window.location.origin}/`;
+function getAuthRedirectUrl() {
+  if (window.location.protocol === "file:") return "http://127.0.0.1:4173/";
+  const url = new URL(window.location.href);
+  url.search = "";
+  url.hash = "";
+  if (url.pathname.endsWith("/index.html")) {
+    url.pathname = url.pathname.replace(/index\.html$/, "");
+  }
+  return url.toString();
+}
+const AUTH_REDIRECT_URL = getAuthRedirectUrl();
 const ML = {
   "2026-05": "Mai/26",
   "2026-06": "Jun/26",
