@@ -1,0 +1,9 @@
+{
+  "name": "Livinha Despesas",
+  "short_name": "Livinha",
+  "description": "Controle de despesas da Livinha",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff"
+}
