@@ -1,0 +1,10 @@
+{
+  "name": "uselivinha",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Controle de despesas Livinha",
+  "scripts": {
+    "serve": "node server-local.mjs",
+    "start": "node server-local.mjs"
+  }
+}
